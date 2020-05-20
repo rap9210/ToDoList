@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="ToDoList.CSS" type="text/css">
+</head>
+<body style="font-family: Inconsolata; background-image: url(https://www.lefthudson.com/wp-content/uploads/2019/11/light-colours-wallpapers-unique-download-light-color-hd-wallpapers-gallery-2019-of-light-colours-wallpapers.jpg)">
+<div class="row">
+    <div class="col-sm"></div>
+    <div class="col-8">
+        <div class="jumbotron jumbotron-fluid" style="text-align: center">
+            <div class="container">
+                <h1 class="display-3">To Do List</h1>
+            </div>
+        </div>
+        <table class="table table-reflow">
+            <thead>
+            <tr>
+                <th>Task</th>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Priority</th>
+            </tr>
+            </thead>
+            <tbody>
+                <div th:inline="text">
+                    <div th:each="toDoListItem:${toDoList}">
+                        <tr>
+                            <td>
+                                <div>
+                                    <p th:text="${toDoListItem.name}"/>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div>
+                                    <p th:text="${toDoListItem.description}"/>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <p th:text="${toDoListItem.dueDate}"/>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <p th:text="${toDoListItem.priority}"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </div>
+                </div>
+            </tbody>
+        </table>
+        <a href="toDoForm"><img src="https://friconix.com/png/fi-xnsuhx-user-plus-solid.png" style="height: 25px; width: 25px"></a>
+
+    </div>
+    <div class="col-sm"></div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>
